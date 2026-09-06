@@ -1,0 +1,611 @@
+<title>Willow's Spring Litter</title>
+
+<!--
+  ========================================================================
+  EDIT CHECKLIST — swap these before the page goes live
+  ------------------------------------------------------------------------
+  1. Breed .......... find/replace "Golden Retriever" and "golden"
+  2. Kennel name .... find/replace "Willow Bend"
+  3. Contact ........ find/replace "555-0142" and "hello@willowbend.example"
+  4. Location ....... find/replace "Prescott, AZ"
+  5. Dates/prices ... search for "EDIT:" comments below
+  6. Photos ......... each .pup__photo block has a commented <img> line —
+                      uncomment it, drop the file in puppies/img/, done.
+  ========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+  :root {
+    /* palette: registry ink + brick stamp on warm oat paper */
+    --paper:      #F2F0EA;
+    --paper-2:    #FBFAF7;
+    --ink:        #1B2F45;
+    --ink-soft:   #4C5F73;
+    --rule:       #D5D2C8;
+    --stamp:      #A6392C;
+    --stamp-soft: #F0E0DC;
+    --seal:       #2F6B4F;
+    --shadow:     0 1px 0 rgba(27,47,69,.06), 0 8px 24px -18px rgba(27,47,69,.55);
+
+    --display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
+    --body:    "Source Serif 4", Georgia, serif;
+    --mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+    --measure: 62ch;
+    --gut: clamp(20px, 4vw, 44px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #121A24;
+      --paper-2:    #1A2432;
+      --ink:        #E6EAF0;
+      --ink-soft:   #9DAEC1;
+      --rule:       #2C3A4B;
+      --stamp:      #E4796A;
+      --stamp-soft: #2E1E1C;
+      --seal:       #6FBF95;
+      --shadow:     0 1px 0 rgba(0,0,0,.4), 0 10px 26px -18px #000;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #121A24;
+    --paper-2:    #1A2432;
+    --ink:        #E6EAF0;
+    --ink-soft:   #9DAEC1;
+    --rule:       #2C3A4B;
+    --stamp:      #E4796A;
+    --stamp-soft: #2E1E1C;
+    --seal:       #6FBF95;
+    --shadow:     0 1px 0 rgba(0,0,0,.4), 0 10px 26px -18px #000;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin-inline: auto; padding-inline: var(--gut); }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; line-height: 1.05; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--stamp);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-block: 20px 18px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kennel {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 19px;
+    letter-spacing: -.01em;
+  }
+  .kennel span { color: var(--stamp); }
+
+  /* ---------- hero ---------- */
+  .hero { padding-block: clamp(40px, 7vw, 76px) 8px; }
+  .hero h1 {
+    font-size: clamp(40px, 7.4vw, 76px);
+    letter-spacing: -.032em;
+    max-width: 15ch;
+    margin-block: 14px 0;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--stamp);
+    /* hand-lettered underline under the number of pups left */
+    box-shadow: inset 0 -.14em 0 var(--stamp-soft);
+  }
+  .hero p.lede {
+    font-size: clamp(18px, 2.1vw, 21px);
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin-block: 20px 0;
+  }
+
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 13px 22px;
+    border: 1px solid var(--stamp);
+    background: var(--stamp);
+    color: #FFF8F6;
+    transition: transform .12s ease, filter .12s ease;
+  }
+  .btn--ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+  .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+
+  /* ---------- litter record strip ---------- */
+  .record {
+    margin-top: clamp(40px, 6vw, 64px);
+    border-block: 1px solid var(--rule);
+    padding-block: 22px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 22px 32px;
+  }
+  .record dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .record dd {
+    margin: 5px 0 0;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 17px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- sections ---------- */
+  section { padding-block: clamp(48px, 7vw, 84px); }
+  .sec-head { margin-bottom: 30px; }
+  .sec-head h2 { font-size: clamp(27px, 3.6vw, 38px); letter-spacing: -.022em; margin-top: 10px; }
+  .sec-head p { color: var(--ink-soft); max-width: var(--measure); margin: 12px 0 0; }
+
+  /* ---------- puppy cards ---------- */
+  .litter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 22px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pup {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .pup__photo {
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    background: var(--collar);
+    color: #fff;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 62px;
+    letter-spacing: -.03em;
+    overflow: hidden;
+  }
+  .pup__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pup__body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .pup__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .pup__name { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -.02em; }
+  .pup__price { font-family: var(--mono); font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .pup__note { margin: 0; font-size: 15.5px; color: var(--ink-soft); }
+  .pup__stats {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3px 14px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    border-top: 1px dashed var(--rule);
+    padding-top: 12px;
+    margin-top: auto;
+  }
+  .pup__stats dt { color: var(--ink-soft); letter-spacing: .04em; }
+  .pup__stats dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+  .pill {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border: 1px solid currentColor;
+    white-space: nowrap;
+  }
+  .pill--open { color: var(--seal); }
+  .pill--hold { color: var(--stamp); }
+  .pill--gone { color: var(--ink-soft); }
+  .pup--gone { opacity: .62; }
+
+  .collar-key {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .collar-key i { width: 11px; height: 11px; background: var(--collar); border-radius: 50%; display: inline-block; }
+
+  /* ---------- included ---------- */
+  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(28px, 5vw, 56px); }
+  .checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .checks li {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 12px;
+    padding-block: 11px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+  }
+  .checks li::before {
+    content: "✓";
+    font-family: var(--mono);
+    font-weight: 600;
+    color: var(--seal);
+    line-height: 1.5;
+  }
+  .checks b { font-weight: 600; }
+  .checks small { display: block; color: var(--ink-soft); font-size: 14px; font-family: var(--mono); letter-spacing: .01em; }
+
+  /* ---------- steps (a real sequence, so numbered) ---------- */
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; }
+  .steps li::before {
+    content: counter(s, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--stamp);
+    border-top: 2px solid var(--stamp);
+    padding-top: 7px;
+  }
+  .steps h3 { font-size: 19px; letter-spacing: -.015em; }
+  .steps p { margin: 5px 0 0; color: var(--ink-soft); font-size: 16px; max-width: 50ch; }
+
+  /* ---------- contact ---------- */
+  .contact {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    padding: clamp(28px, 5vw, 48px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px 48px;
+    align-items: start;
+  }
+  .contact h2 { font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -.02em; }
+  .contact p { color: var(--ink-soft); max-width: 46ch; }
+  .lines { display: flex; flex-direction: column; gap: 14px; }
+  .line { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
+  .line span { font-family: var(--mono); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-soft); }
+  .line strong { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -.01em; }
+  .line:hover strong { color: var(--stamp); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-block: 26px 40px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    justify-content: space-between;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kennel">Willow Bend <span>&middot;</span> Goldens</div>
+    <p class="eyebrow">Prescott, AZ &nbsp;/&nbsp; Home-raised, one litter at a time</p>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Litter W-3 &nbsp;/&nbsp; Whelped September 5, 2026</p>
+    <!-- EDIT: headline — update the count as pups get reserved -->
+    <h1>Four golden puppies still looking for their people.</h1>
+    <p class="lede">
+      Six pups born in our living room, not a kennel run. Raised underfoot with kids, a vacuum,
+      a doorbell and a very patient cat. They go home October 31 at eight weeks, vet-checked,
+      microchipped and already used to a crate.
+    </p>
+    <div class="cta-row">
+      <!-- EDIT: phone + email -->
+      <a class="btn" href="sms:+15555550142">Text about a puppy</a>
+      <a class="btn btn--ghost" href="#litter">Meet the litter</a>
+    </div>
+
+    <dl class="record">
+      <div>
+        <dt>Whelped</dt>
+        <dd>Sep 5, 2026</dd>
+      </div>
+      <div>
+        <dt>Go-home date</dt>
+        <dd>Oct 31, 2026</dd>
+      </div>
+      <div>
+        <dt>Dam / Sire</dt>
+        <dd>Willow &times; Baxter</dd>
+      </div>
+      <div>
+        <dt>Registration</dt>
+        <dd>AKC Limited</dd>
+      </div>
+      <div>
+        <dt>Deposit to hold</dt>
+        <dd>$500</dd>
+      </div>
+    </dl>
+  </div>
+
+  <section id="litter">
+    <div class="sec-head">
+      <p class="eyebrow">The litter &nbsp;/&nbsp; 6 pups, 4 available</p>
+      <h2>Everyone goes by collar color until you name them.</h2>
+      <p>Weights below were taken at the seven-week vet visit. Temperament notes are ours, from eight weeks
+         of watching them figure out stairs.</p>
+    </div>
+
+    <!-- EDIT: one <li> per puppy. --collar sets the card color + dot. -->
+    <ul class="litter">
+
+      <li class="pup" style="--collar:#2F6B4F">
+        <div class="pup__photo">
+          <!-- <img src="img/juniper.jpg" alt="Juniper, a golden retriever puppy in a green collar"> -->
+          J
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Juniper</div>
+            <span class="pill pill--open">Available</span>
+          </div>
+          <p class="pup__note">The one who brings you things. First to the door, first into the water bowl,
+            asleep in your lap ninety seconds later.</p>
+          <div class="collar-key"><i></i> Green collar &middot; female</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>11 lb 4 oz</dd>
+            <dt>COAT</dt><dd>Medium gold</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="pup" style="--collar:#1B2F45">
+        <div class="pup__photo">
+          <!-- <img src="img/marlow.jpg" alt="Marlow, a golden retriever puppy in a navy collar"> -->
+          M
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Marlow</div>
+            <span class="pill pill--open">Available</span>
+          </div>
+          <p class="pup__note">Biggest of the six and the calmest. Sits and watches the room before he joins it.
+            Good bet for a first-time family.</p>
+          <div class="collar-key"><i></i> Navy collar &middot; male</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>13 lb 1 oz</dd>
+            <dt>COAT</dt><dd>Dark gold</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="pup" style="--collar:#A6392C">
+        <div class="pup__photo">
+          <!-- <img src="img/poppy.jpg" alt="Poppy, a golden retriever puppy in a red collar"> -->
+          P
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Poppy</div>
+            <span class="pill pill--open">Available</span>
+          </div>
+          <p class="pup__note">Smallest, loudest, entirely convinced she is the largest. Retrieves a sock
+            already. She will keep up with older kids.</p>
+          <div class="collar-key"><i></i> Red collar &middot; female</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>9 lb 12 oz</dd>
+            <dt>COAT</dt><dd>Light cream</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="pup" style="--collar:#B98A2E">
+        <div class="pup__photo">
+          <!-- <img src="img/sawyer.jpg" alt="Sawyer, a golden retriever puppy in a gold collar"> -->
+          S
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Sawyer</div>
+            <span class="pill pill--open">Available</span>
+          </div>
+          <p class="pup__note">Nose to the ground from day one. Tracks a treat across the whole yard.
+            He'd love a job and a person who hikes.</p>
+          <div class="collar-key"><i></i> Gold collar &middot; male</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>12 lb 6 oz</dd>
+            <dt>COAT</dt><dd>Medium gold</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="pup pup--gone" style="--collar:#5C6E8A">
+        <div class="pup__photo">
+          <!-- <img src="img/birdie.jpg" alt="Birdie, a golden retriever puppy in a grey collar"> -->
+          B
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Birdie</div>
+            <span class="pill pill--hold">Deposit held</span>
+          </div>
+          <p class="pup__note">Reserved by a family in Flagstaff. Waiting on their home visit before it's final.</p>
+          <div class="collar-key"><i></i> Grey collar &middot; female</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>10 lb 9 oz</dd>
+            <dt>COAT</dt><dd>Light gold</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+      <li class="pup pup--gone" style="--collar:#7C5A88">
+        <div class="pup__photo">
+          <!-- <img src="img/otis.jpg" alt="Otis, a golden retriever puppy in a purple collar"> -->
+          O
+        </div>
+        <div class="pup__body">
+          <div class="pup__top">
+            <div class="pup__name">Otis</div>
+            <span class="pill pill--gone">Spoken for</span>
+          </div>
+          <p class="pup__note">Going to a couple in Tucson who waited through two litters for him.</p>
+          <div class="collar-key"><i></i> Purple collar &middot; male</div>
+          <dl class="pup__stats">
+            <dt>WT 7WK</dt><dd>12 lb 0 oz</dd>
+            <dt>COAT</dt><dd>Dark gold</dd>
+            <dt>PRICE</dt><dd>$2,200</dd>
+          </dl>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+
+  <section>
+    <div class="two-col">
+      <div>
+        <div class="sec-head">
+          <p class="eyebrow">What $2,200 covers</p>
+          <h2>They leave here already started.</h2>
+          <p>Nothing on this list is an add-on. It's what every pup goes home with, and you get
+             the paperwork for all of it in a folder at pickup.</p>
+        </div>
+      </div>
+      <!-- EDIT: vet schedule — match your own vet's protocol -->
+      <ul class="checks">
+        <li><div><b>Vet exam at 7 weeks</b><small>Written health cert, Dr. Alvarez, Granite Creek Vet</small></div></li>
+        <li><div><b>First DHPP vaccination</b><small>Given day 49 &middot; booster due 2 weeks after pickup</small></div></li>
+        <li><div><b>Dewormed 4 times</b><small>Pyrantel at weeks 2, 4, 6, 8</small></div></li>
+        <li><div><b>Microchipped &amp; registered</b><small>Transfers to your name at pickup</small></div></li>
+        <li><div><b>AKC Limited registration</b><small>Spay/neuter agreement at 12&ndash;18 months</small></div></li>
+        <li><div><b>2-year health guarantee</b><small>Hips, elbows, eyes, heart &middot; both parents OFA cleared</small></div></li>
+        <li><div><b>Crate-started, litter-box clean</b><small>Sleeping 5&ndash;6 hours through the night by week 8</small></div></li>
+        <li><div><b>Go-home kit</b><small>Two weeks of food, blanket with littermate scent, collar, vet folder</small></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <p class="eyebrow">How reserving works</p>
+      <h2>Four steps, about three weeks start to finish.</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <div>
+          <h3>Text or email us</h3>
+          <p>Tell us about your house, your yard, your kids, your other animals, and your work hours.
+             We answer every message, usually same day.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Video call with the litter</h3>
+          <p>Twenty minutes, live, so you can see them move around and ask everything. We'll tell you
+             honestly which pup we think fits you, even if it isn't the one you picked from the photos.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>$500 deposit holds your pup</h3>
+          <p>Applied to the price, refundable up until the go-home date if anything changes on your end.
+             We send a written agreement to sign first.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Pickup day, October 31</h3>
+          <p>Come to the house between 9am and 4pm. Balance due at pickup, cash or Zelle.
+             Plan on an hour &mdash; we go through the folder with you and send you off with food they already eat.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="contact">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Ask us anything &mdash; even if you're not ready yet.</h2>
+        <p>We'd rather talk you out of a golden now than take one back in a year.
+           If this litter fills, we'll put you on the list for Willow's next one.</p>
+      </div>
+      <div class="lines">
+        <!-- EDIT: phone + email -->
+        <a class="line" href="sms:+15555550142">
+          <span>Text (fastest)</span>
+          <strong>(555) 555-0142</strong>
+        </a>
+        <a class="line" href="mailto:hello@willowbend.example?subject=Puppy%20inquiry%20%E2%80%94%20Litter%20W-3">
+          <span>Email</span>
+          <strong>hello@willowbend.example</strong>
+        </a>
+        <div class="line">
+          <span>Pickup location</span>
+          <strong>Prescott, AZ</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Willow Bend Goldens &middot; Prescott, AZ</div>
+    <div>Litter W-3 &middot; last updated September 6, 2026</div>
+  </footer>
+
+</div>
