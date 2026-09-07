@@ -1,67 +1,78 @@
-<title>Willow's Spring Litter</title>
+<title>Hustlin' Huskies</title>
 
 <!--
-  ========================================================================
-  EDIT CHECKLIST — swap these before the page goes live
-  ------------------------------------------------------------------------
-  1. Breed .......... find/replace "Golden Retriever" and "golden"
-  2. Kennel name .... find/replace "Willow Bend"
-  3. Contact ........ find/replace "555-0142" and "hello@willowbend.example"
-  4. Location ....... find/replace "Prescott, AZ"
-  5. Dates/prices ... search for "EDIT:" comments below
-  6. Photos ......... each .pup__photo block has a commented <img> line —
-                      uncomment it, drop the file in puppies/img/, done.
-  ========================================================================
+  ==========================================================================
+  PLACEHOLDER CHECKLIST — everything marked EDIT is sample text, not real.
+  --------------------------------------------------------------------------
+  CONFIRMED (do not change):
+    Kennel ......... Hustlin' Huskies
+    Breed .......... Siberian Husky
+    Phone .......... 623-217-1039
+    Location ....... Glendale, AZ
+    Whelped ........ July 18, 2026
+    Pups ........... Lucy (F), Chip (M), Frankie (M), Eddie (M)
+
+  STILL PLACEHOLDER — search "EDIT:" to find each one:
+    1. Email domain — currently hustlinhuskies@example.com
+    2. Prices — currently "Text for pricing" (no numbers anywhere)
+    3. Deposit amount — currently $XXX
+    4. Puppy weights, eye color, markings, temperament notes
+    5. Vet / shot / deworming / microchip records
+    6. Registration type + health guarantee terms
+    7. Photos — each card has a commented-out <img>; drop files in puppies/img/
+  ==========================================================================
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
 
 <style>
+  /* ---- palette: arctic dog, desert state ---- */
   :root {
-    /* palette: registry ink + brick stamp on warm oat paper */
-    --paper:      #F2F0EA;
-    --paper-2:    #FBFAF7;
-    --ink:        #1B2F45;
-    --ink-soft:   #4C5F73;
-    --rule:       #D5D2C8;
-    --stamp:      #A6392C;
-    --stamp-soft: #F0E0DC;
-    --seal:       #2F6B4F;
-    --shadow:     0 1px 0 rgba(27,47,69,.06), 0 8px 24px -18px rgba(27,47,69,.55);
+    --paper:   #F2F5F7;
+    --paper-2: #FFFFFF;
+    --ink:     #10161B;
+    --ink-soft:#54636F;
+    --rule:    #D6DFE6;
+    --ice:     #0E7FA8;   /* glacier blue — primary accent */
+    --ice-dim: #DCEDF5;
+    --sun:     #B85C0C;   /* desert amber — secondary, used sparingly */
+    --good:    #1C7A4E;
+    --shadow:  0 1px 0 rgba(16,22,27,.05), 0 12px 30px -22px rgba(16,22,27,.7);
 
-    --display: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
-    --body:    "Source Serif 4", Georgia, serif;
-    --mono:    "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+    --display: "Archivo", "Helvetica Neue", sans-serif;
+    --body:    "Newsreader", Georgia, serif;
+    --mono:    "DM Mono", ui-monospace, monospace;
 
-    --measure: 62ch;
-    --gut: clamp(20px, 4vw, 44px);
+    --gut: clamp(20px, 4.5vw, 48px);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper:      #121A24;
-      --paper-2:    #1A2432;
-      --ink:        #E6EAF0;
-      --ink-soft:   #9DAEC1;
-      --rule:       #2C3A4B;
-      --stamp:      #E4796A;
-      --stamp-soft: #2E1E1C;
-      --seal:       #6FBF95;
-      --shadow:     0 1px 0 rgba(0,0,0,.4), 0 10px 26px -18px #000;
+      --paper:   #0F1418;
+      --paper-2: #171F25;
+      --ink:     #E9F0F5;
+      --ink-soft:#95A6B4;
+      --rule:    #263139;
+      --ice:     #5BC8E8;
+      --ice-dim: #0F323F;
+      --sun:     #E8A055;
+      --good:    #52C48C;
+      --shadow:  0 1px 0 rgba(0,0,0,.5), 0 14px 34px -24px #000;
     }
   }
   :root[data-theme="dark"] {
-    --paper:      #121A24;
-    --paper-2:    #1A2432;
-    --ink:        #E6EAF0;
-    --ink-soft:   #9DAEC1;
-    --rule:       #2C3A4B;
-    --stamp:      #E4796A;
-    --stamp-soft: #2E1E1C;
-    --seal:       #6FBF95;
-    --shadow:     0 1px 0 rgba(0,0,0,.4), 0 10px 26px -18px #000;
+    --paper:   #0F1418;
+    --paper-2: #171F25;
+    --ink:     #E9F0F5;
+    --ink-soft:#95A6B4;
+    --rule:    #263139;
+    --ice:     #5BC8E8;
+    --ice-dim: #0F323F;
+    --sun:     #E8A055;
+    --good:    #52C48C;
+    --shadow:  0 1px 0 rgba(0,0,0,.5), 0 14px 34px -24px #000;
   }
 
   * { box-sizing: border-box; }
@@ -71,20 +82,27 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 17.5px;
+    line-height: 1.62;
     -webkit-font-smoothing: antialiased;
   }
 
-  .wrap { max-width: 1080px; margin-inline: auto; padding-inline: var(--gut); }
+  .wrap { max-width: 1060px; margin-inline: auto; padding-inline: var(--gut); }
 
-  h1, h2, h3 { font-family: var(--display); font-weight: 700; text-wrap: balance; margin: 0; line-height: 1.05; }
+  h1, h2, h3 {
+    font-family: var(--display);
+    font-weight: 800;
+    letter-spacing: -.028em;
+    line-height: 1.02;
+    text-wrap: balance;
+    margin: 0;
+  }
 
-  .eyebrow {
+  .tag {
     font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .14em;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: .16em;
     text-transform: uppercase;
     color: var(--ink-soft);
     margin: 0;
@@ -92,104 +110,114 @@
 
   a { color: inherit; }
   a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--stamp);
+    outline: 2px solid var(--ice);
     outline-offset: 3px;
-    border-radius: 2px;
   }
 
-  /* ---------- masthead ---------- */
-  .masthead {
+  /* ---- masthead ---- */
+  .top {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 24px;
-    align-items: baseline;
+    gap: 10px 24px;
+    align-items: center;
     justify-content: space-between;
-    padding-block: 20px 18px;
-    border-bottom: 1px solid var(--rule);
+    padding-block: 22px 18px;
+    border-bottom: 2px solid var(--ink);
   }
-  .kennel {
+  .mark {
     font-family: var(--display);
     font-weight: 800;
-    font-size: 19px;
-    letter-spacing: -.01em;
+    font-size: clamp(20px, 2.6vw, 26px);
+    letter-spacing: -.035em;
+    text-transform: uppercase;
   }
-  .kennel span { color: var(--stamp); }
+  .mark em { font-style: normal; color: var(--ice); }
+  .top .tag { text-align: right; }
 
-  /* ---------- hero ---------- */
-  .hero { padding-block: clamp(40px, 7vw, 76px) 8px; }
+  /* ---- hero ---- */
+  .hero { padding-block: clamp(38px, 6.5vw, 70px) 0; }
   .hero h1 {
-    font-size: clamp(40px, 7.4vw, 76px);
-    letter-spacing: -.032em;
-    max-width: 15ch;
-    margin-block: 14px 0;
+    font-size: clamp(42px, 8.2vw, 88px);
+    max-width: 13ch;
+    margin-top: 16px;
+    text-transform: uppercase;
   }
-  .hero h1 em {
-    font-style: normal;
-    color: var(--stamp);
-    /* hand-lettered underline under the number of pups left */
-    box-shadow: inset 0 -.14em 0 var(--stamp-soft);
-  }
-  .hero p.lede {
-    font-size: clamp(18px, 2.1vw, 21px);
+  .hero h1 b { font-weight: 800; color: var(--ice); }
+  .lede {
+    font-size: clamp(18px, 2.2vw, 22px);
     color: var(--ink-soft);
-    max-width: var(--measure);
-    margin-block: 20px 0;
+    max-width: 58ch;
+    margin: 22px 0 0;
   }
 
   .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
     font-family: var(--display);
     font-weight: 700;
     font-size: 16px;
+    letter-spacing: -.01em;
     text-decoration: none;
-    padding: 13px 22px;
-    border: 1px solid var(--stamp);
-    background: var(--stamp);
-    color: #FFF8F6;
-    transition: transform .12s ease, filter .12s ease;
+    padding: 14px 24px;
+    border: 2px solid var(--ice);
+    background: var(--ice);
+    color: var(--paper);
+    transition: transform .12s ease;
   }
+  :root[data-theme="dark"] .btn,
+  .btn { color: #F7FCFE; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .btn { color: #0B1216; }
+  }
+  :root[data-theme="dark"] .btn { color: #0B1216; }
   .btn--ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
-  .btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+  :root[data-theme="dark"] .btn--ghost { color: var(--ink); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .btn--ghost { color: var(--ink); }
+  }
+  .btn:hover { transform: translateY(-2px); }
 
-  /* ---------- litter record strip ---------- */
+  /* ---- record strip ---- */
   .record {
-    margin-top: clamp(40px, 6vw, 64px);
+    margin-top: clamp(38px, 5.5vw, 60px);
     border-block: 1px solid var(--rule);
     padding-block: 22px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 22px 32px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px 30px;
   }
   .record dt {
     font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .13em;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .15em;
     text-transform: uppercase;
     color: var(--ink-soft);
   }
   .record dd {
-    margin: 5px 0 0;
+    margin: 6px 0 0;
     font-family: var(--display);
-    font-weight: 500;
+    font-weight: 700;
     font-size: 17px;
+    letter-spacing: -.015em;
     font-variant-numeric: tabular-nums;
   }
 
-  /* ---------- sections ---------- */
-  section { padding-block: clamp(48px, 7vw, 84px); }
-  .sec-head { margin-bottom: 30px; }
-  .sec-head h2 { font-size: clamp(27px, 3.6vw, 38px); letter-spacing: -.022em; margin-top: 10px; }
-  .sec-head p { color: var(--ink-soft); max-width: var(--measure); margin: 12px 0 0; }
+  section { padding-block: clamp(46px, 7vw, 82px); }
+  .head { margin-bottom: 30px; }
+  .head h2 {
+    font-size: clamp(28px, 4.2vw, 44px);
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+  .head p { color: var(--ink-soft); max-width: 60ch; margin: 14px 0 0; }
 
-  /* ---------- puppy cards ---------- */
+  /* ---- litter ---- */
   .litter {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -202,124 +230,145 @@
     flex-direction: column;
   }
   .pup__photo {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     display: grid;
     place-items: center;
-    background: var(--collar);
-    color: #fff;
+    background:
+      linear-gradient(150deg, var(--c1) 0%, var(--c2) 100%);
+    color: #F7FCFE;
     font-family: var(--display);
     font-weight: 800;
-    font-size: 62px;
-    letter-spacing: -.03em;
+    font-size: 58px;
+    letter-spacing: -.05em;
+    text-transform: uppercase;
     overflow: hidden;
   }
   .pup__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .pup__body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
-  .pup__top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .pup__name { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -.02em; }
-  .pup__price { font-family: var(--mono); font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .pup__body { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+  .pup__row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pup__name {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 23px;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+  }
   .pup__note { margin: 0; font-size: 15.5px; color: var(--ink-soft); }
   .pup__stats {
-    margin: 0;
+    margin: auto 0 0;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 3px 14px;
     font-family: var(--mono);
-    font-size: 12.5px;
+    font-size: 12px;
     border-top: 1px dashed var(--rule);
     padding-top: 12px;
-    margin-top: auto;
   }
-  .pup__stats dt { color: var(--ink-soft); letter-spacing: .04em; }
+  .pup__stats dt { color: var(--ink-soft); letter-spacing: .05em; }
   .pup__stats dd { margin: 0; font-variant-numeric: tabular-nums; }
 
   .pill {
     font-family: var(--mono);
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: .12em;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .14em;
     text-transform: uppercase;
-    padding: 4px 9px;
+    padding: 4px 8px;
     border: 1px solid currentColor;
     white-space: nowrap;
+    color: var(--good);
   }
-  .pill--open { color: var(--seal); }
-  .pill--hold { color: var(--stamp); }
+  .pill--hold { color: var(--sun); }
   .pill--gone { color: var(--ink-soft); }
-  .pup--gone { opacity: .62; }
 
-  .collar-key {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+  /* ---- straight talk ---- */
+  .talk { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(26px, 5vw, 54px); }
+  .real { list-style: none; margin: 0; padding: 0; }
+  .real li {
+    padding-block: 14px;
+    border-bottom: 1px solid var(--rule);
   }
-  .collar-key i { width: 11px; height: 11px; background: var(--collar); border-radius: 50%; display: inline-block; }
+  .real b {
+    display: block;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -.015em;
+    margin-bottom: 3px;
+  }
+  .real span { color: var(--ink-soft); font-size: 16px; }
 
-  /* ---------- included ---------- */
-  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: clamp(28px, 5vw, 56px); }
-  .checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .heat {
+    border-left: 3px solid var(--sun);
+    background: var(--paper-2);
+    padding: 18px 20px;
+    margin-top: 26px;
+  }
+  .heat p { margin: 6px 0 0; color: var(--ink-soft); font-size: 16px; }
+  .heat .tag { color: var(--sun); }
+
+  /* ---- included ---- */
+  .checks { list-style: none; margin: 0; padding: 0; }
   .checks li {
     display: grid;
-    grid-template-columns: 22px 1fr;
+    grid-template-columns: 20px 1fr;
     gap: 12px;
     padding-block: 11px;
     border-bottom: 1px solid var(--rule);
-    font-size: 16px;
   }
   .checks li::before {
     content: "✓";
     font-family: var(--mono);
-    font-weight: 600;
-    color: var(--seal);
+    color: var(--good);
     line-height: 1.5;
   }
-  .checks b { font-weight: 600; }
-  .checks small { display: block; color: var(--ink-soft); font-size: 14px; font-family: var(--mono); letter-spacing: .01em; }
+  .checks b { font-family: var(--display); font-weight: 700; font-size: 16px; letter-spacing: -.01em; }
+  .checks small { display: block; font-family: var(--mono); font-size: 12.5px; color: var(--ink-soft); margin-top: 2px; }
 
-  /* ---------- steps (a real sequence, so numbered) ---------- */
-  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
-  .steps li { counter-increment: s; display: grid; grid-template-columns: 46px 1fr; gap: 16px; align-items: start; }
+  /* ---- steps ---- */
+  .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; }
   .steps li::before {
     content: counter(s, decimal-leading-zero);
     font-family: var(--mono);
     font-size: 13px;
-    font-weight: 600;
-    color: var(--stamp);
-    border-top: 2px solid var(--stamp);
-    padding-top: 7px;
+    color: var(--ice);
+    border-top: 3px solid var(--ice);
+    padding-top: 8px;
   }
-  .steps h3 { font-size: 19px; letter-spacing: -.015em; }
-  .steps p { margin: 5px 0 0; color: var(--ink-soft); font-size: 16px; max-width: 50ch; }
+  .steps h3 { font-size: 19px; text-transform: uppercase; }
+  .steps p { margin: 6px 0 0; color: var(--ink-soft); max-width: 52ch; font-size: 16px; }
 
-  /* ---------- contact ---------- */
+  /* ---- contact ---- */
   .contact {
     background: var(--paper-2);
     border: 1px solid var(--rule);
     box-shadow: var(--shadow);
-    padding: clamp(28px, 5vw, 48px);
+    padding: clamp(26px, 5vw, 46px);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px 48px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px 46px;
     align-items: start;
   }
-  .contact h2 { font-size: clamp(26px, 3.4vw, 34px); letter-spacing: -.02em; }
-  .contact p { color: var(--ink-soft); max-width: 46ch; }
-  .lines { display: flex; flex-direction: column; gap: 14px; }
+  .contact h2 { font-size: clamp(26px, 3.6vw, 38px); }
+  .contact p { color: var(--ink-soft); max-width: 44ch; }
+  .lines { display: flex; flex-direction: column; gap: 16px; }
   .line { display: flex; flex-direction: column; gap: 2px; text-decoration: none; }
-  .line span { font-family: var(--mono); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; color: var(--ink-soft); }
-  .line strong { font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -.01em; }
-  .line:hover strong { color: var(--stamp); }
+  .line span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-soft); }
+  .line strong {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+  }
+  a.line:hover strong { color: var(--ice); }
 
   footer {
-    border-top: 1px solid var(--rule);
-    padding-block: 26px 40px;
+    border-top: 2px solid var(--ink);
+    padding-block: 22px 44px;
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--ink-soft);
     display: flex;
     flex-wrap: wrap;
@@ -334,181 +383,115 @@
 
 <div class="wrap">
 
-  <header class="masthead">
-    <div class="kennel">Willow Bend <span>&middot;</span> Goldens</div>
-    <p class="eyebrow">Prescott, AZ &nbsp;/&nbsp; Home-raised, one litter at a time</p>
+  <header class="top">
+    <div class="mark">Hustlin&rsquo; <em>Huskies</em></div>
+    <p class="tag">Glendale, AZ</p>
   </header>
 
   <div class="hero">
-    <p class="eyebrow">Litter W-3 &nbsp;/&nbsp; Whelped September 5, 2026</p>
-    <!-- EDIT: headline — update the count as pups get reserved -->
-    <h1>Four golden puppies still looking for their people.</h1>
+    <p class="tag">Litter of four &nbsp;/&nbsp; Whelped July 18, 2026</p>
+    <h1>Arctic dogs, <b>Arizona raised.</b></h1>
     <p class="lede">
-      Six pups born in our living room, not a kennel run. Raised underfoot with kids, a vacuum,
-      a doorbell and a very patient cat. They go home October 31 at eight weeks, vet-checked,
-      microchipped and already used to a crate.
+      Four Siberian Husky puppies &mdash; one girl, three boys &mdash; born and raised in our house
+      in Glendale. They go home at eight weeks, on September 12.
     </p>
     <div class="cta-row">
-      <!-- EDIT: phone + email -->
-      <a class="btn" href="sms:+15555550142">Text about a puppy</a>
-      <a class="btn btn--ghost" href="#litter">Meet the litter</a>
+      <a class="btn" href="sms:+16232171039">Text 623-217-1039</a>
+      <a class="btn btn--ghost" href="#litter">Meet the four</a>
     </div>
 
     <dl class="record">
-      <div>
-        <dt>Whelped</dt>
-        <dd>Sep 5, 2026</dd>
-      </div>
-      <div>
-        <dt>Go-home date</dt>
-        <dd>Oct 31, 2026</dd>
-      </div>
-      <div>
-        <dt>Dam / Sire</dt>
-        <dd>Willow &times; Baxter</dd>
-      </div>
-      <div>
-        <dt>Registration</dt>
-        <dd>AKC Limited</dd>
-      </div>
-      <div>
-        <dt>Deposit to hold</dt>
-        <dd>$500</dd>
-      </div>
+      <div><dt>Whelped</dt><dd>Jul 18, 2026</dd></div>
+      <div><dt>Ready to go</dt><dd>Sep 12, 2026</dd></div>
+      <div><dt>Litter</dt><dd>1 girl, 3 boys</dd></div>
+      <div><dt>Pickup</dt><dd>Glendale, AZ</dd></div>
+      <!-- EDIT: replace with your price once you set it -->
+      <div><dt>Pricing</dt><dd>Text to ask</dd></div>
     </dl>
   </div>
 
   <section id="litter">
-    <div class="sec-head">
-      <p class="eyebrow">The litter &nbsp;/&nbsp; 6 pups, 4 available</p>
-      <h2>Everyone goes by collar color until you name them.</h2>
-      <p>Weights below were taken at the seven-week vet visit. Temperament notes are ours, from eight weeks
-         of watching them figure out stairs.</p>
+    <div class="head">
+      <p class="tag">The litter &nbsp;/&nbsp; 4 available</p>
+      <h2>Lucy, Chip, Frankie &amp; Eddie</h2>
+      <p>All four are still available. Text for current photos &mdash; they change fast at this age.</p>
     </div>
 
-    <!-- EDIT: one <li> per puppy. --collar sets the card color + dot. -->
+    <!-- EDIT: notes, weights, eye color and markings below are PLACEHOLDER text. -->
     <ul class="litter">
 
-      <li class="pup" style="--collar:#2F6B4F">
+      <li class="pup" style="--c1:#0E7FA8; --c2:#164C63">
         <div class="pup__photo">
-          <!-- <img src="img/juniper.jpg" alt="Juniper, a golden retriever puppy in a green collar"> -->
-          J
+          <!-- <img src="img/lucy.jpg" alt="Lucy, a Siberian Husky puppy"> -->
+          L
         </div>
         <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Juniper</div>
-            <span class="pill pill--open">Available</span>
+          <div class="pup__row">
+            <div class="pup__name">Lucy</div>
+            <span class="pill">Available</span>
           </div>
-          <p class="pup__note">The one who brings you things. First to the door, first into the water bowl,
-            asleep in your lap ninety seconds later.</p>
-          <div class="collar-key"><i></i> Green collar &middot; female</div>
+          <p class="pup__note">PLACEHOLDER — the only girl in the litter. Add a line about her here.</p>
           <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>11 lb 4 oz</dd>
-            <dt>COAT</dt><dd>Medium gold</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
+            <dt>SEX</dt><dd>Female</dd>
+            <dt>WT</dt><dd>— lb</dd>
+            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
 
-      <li class="pup" style="--collar:#1B2F45">
+      <li class="pup" style="--c1:#2F4A5C; --c2:#151E26">
         <div class="pup__photo">
-          <!-- <img src="img/marlow.jpg" alt="Marlow, a golden retriever puppy in a navy collar"> -->
-          M
+          <!-- <img src="img/chip.jpg" alt="Chip, a Siberian Husky puppy"> -->
+          C
         </div>
         <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Marlow</div>
-            <span class="pill pill--open">Available</span>
+          <div class="pup__row">
+            <div class="pup__name">Chip</div>
+            <span class="pill">Available</span>
           </div>
-          <p class="pup__note">Biggest of the six and the calmest. Sits and watches the room before he joins it.
-            Good bet for a first-time family.</p>
-          <div class="collar-key"><i></i> Navy collar &middot; male</div>
+          <p class="pup__note">PLACEHOLDER — add Chip's markings and personality here.</p>
           <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>13 lb 1 oz</dd>
-            <dt>COAT</dt><dd>Dark gold</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
+            <dt>SEX</dt><dd>Male</dd>
+            <dt>WT</dt><dd>— lb</dd>
+            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
 
-      <li class="pup" style="--collar:#A6392C">
+      <li class="pup" style="--c1:#5B7080; --c2:#2A3944">
         <div class="pup__photo">
-          <!-- <img src="img/poppy.jpg" alt="Poppy, a golden retriever puppy in a red collar"> -->
-          P
+          <!-- <img src="img/frankie.jpg" alt="Frankie, a Siberian Husky puppy"> -->
+          F
         </div>
         <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Poppy</div>
-            <span class="pill pill--open">Available</span>
+          <div class="pup__row">
+            <div class="pup__name">Frankie</div>
+            <span class="pill">Available</span>
           </div>
-          <p class="pup__note">Smallest, loudest, entirely convinced she is the largest. Retrieves a sock
-            already. She will keep up with older kids.</p>
-          <div class="collar-key"><i></i> Red collar &middot; female</div>
+          <p class="pup__note">PLACEHOLDER — add Frankie's markings and personality here.</p>
           <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>9 lb 12 oz</dd>
-            <dt>COAT</dt><dd>Light cream</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
+            <dt>SEX</dt><dd>Male</dd>
+            <dt>WT</dt><dd>— lb</dd>
+            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
 
-      <li class="pup" style="--collar:#B98A2E">
+      <li class="pup" style="--c1:#8A6A4B; --c2:#3B2E22">
         <div class="pup__photo">
-          <!-- <img src="img/sawyer.jpg" alt="Sawyer, a golden retriever puppy in a gold collar"> -->
-          S
+          <!-- <img src="img/eddie.jpg" alt="Eddie, a Siberian Husky puppy"> -->
+          E
         </div>
         <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Sawyer</div>
-            <span class="pill pill--open">Available</span>
+          <div class="pup__row">
+            <div class="pup__name">Eddie</div>
+            <span class="pill">Available</span>
           </div>
-          <p class="pup__note">Nose to the ground from day one. Tracks a treat across the whole yard.
-            He'd love a job and a person who hikes.</p>
-          <div class="collar-key"><i></i> Gold collar &middot; male</div>
+          <p class="pup__note">PLACEHOLDER — add Eddie's markings and personality here.</p>
           <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>12 lb 6 oz</dd>
-            <dt>COAT</dt><dd>Medium gold</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
-          </dl>
-        </div>
-      </li>
-
-      <li class="pup pup--gone" style="--collar:#5C6E8A">
-        <div class="pup__photo">
-          <!-- <img src="img/birdie.jpg" alt="Birdie, a golden retriever puppy in a grey collar"> -->
-          B
-        </div>
-        <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Birdie</div>
-            <span class="pill pill--hold">Deposit held</span>
-          </div>
-          <p class="pup__note">Reserved by a family in Flagstaff. Waiting on their home visit before it's final.</p>
-          <div class="collar-key"><i></i> Grey collar &middot; female</div>
-          <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>10 lb 9 oz</dd>
-            <dt>COAT</dt><dd>Light gold</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
-          </dl>
-        </div>
-      </li>
-
-      <li class="pup pup--gone" style="--collar:#7C5A88">
-        <div class="pup__photo">
-          <!-- <img src="img/otis.jpg" alt="Otis, a golden retriever puppy in a purple collar"> -->
-          O
-        </div>
-        <div class="pup__body">
-          <div class="pup__top">
-            <div class="pup__name">Otis</div>
-            <span class="pill pill--gone">Spoken for</span>
-          </div>
-          <p class="pup__note">Going to a couple in Tucson who waited through two litters for him.</p>
-          <div class="collar-key"><i></i> Purple collar &middot; male</div>
-          <dl class="pup__stats">
-            <dt>WT 7WK</dt><dd>12 lb 0 oz</dd>
-            <dt>COAT</dt><dd>Dark gold</dd>
-            <dt>PRICE</dt><dd>$2,200</dd>
+            <dt>SEX</dt><dd>Male</dd>
+            <dt>WT</dt><dd>— lb</dd>
+            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
@@ -517,61 +500,95 @@
   </section>
 
   <section>
-    <div class="two-col">
+    <div class="talk">
       <div>
-        <div class="sec-head">
-          <p class="eyebrow">What $2,200 covers</p>
-          <h2>They leave here already started.</h2>
-          <p>Nothing on this list is an add-on. It's what every pup goes home with, and you get
-             the paperwork for all of it in a folder at pickup.</p>
+        <div class="head">
+          <p class="tag">Before you text</p>
+          <h2>Read this part.</h2>
+          <p>Huskies are the most returned breed at Arizona shelters. We would rather talk you
+             out of one now than take one back in a year. If all four of these sound fine to you,
+             you're our people.</p>
+        </div>
+        <div class="heat">
+          <p class="tag">Arizona specific</p>
+          <p>From May to September, walks happen before sunrise or after dark. Pavement burns paws
+             at 8am. They will be indoor dogs on A/C for a third of the year, and they'll still blow
+             their coat all over your house.</p>
         </div>
       </div>
-      <!-- EDIT: vet schedule — match your own vet's protocol -->
-      <ul class="checks">
-        <li><div><b>Vet exam at 7 weeks</b><small>Written health cert, Dr. Alvarez, Granite Creek Vet</small></div></li>
-        <li><div><b>First DHPP vaccination</b><small>Given day 49 &middot; booster due 2 weeks after pickup</small></div></li>
-        <li><div><b>Dewormed 4 times</b><small>Pyrantel at weeks 2, 4, 6, 8</small></div></li>
-        <li><div><b>Microchipped &amp; registered</b><small>Transfers to your name at pickup</small></div></li>
-        <li><div><b>AKC Limited registration</b><small>Spay/neuter agreement at 12&ndash;18 months</small></div></li>
-        <li><div><b>2-year health guarantee</b><small>Hips, elbows, eyes, heart &middot; both parents OFA cleared</small></div></li>
-        <li><div><b>Crate-started, litter-box clean</b><small>Sleeping 5&ndash;6 hours through the night by week 8</small></div></li>
-        <li><div><b>Go-home kit</b><small>Two weeks of food, blanket with littermate scent, collar, vet folder</small></div></li>
+      <ul class="real">
+        <li>
+          <b>They are loud</b>
+          <span>Not barking &mdash; howling, screaming, arguing with you. Thin apartment walls will not survive it.</span>
+        </li>
+        <li>
+          <b>They escape</b>
+          <span>Six-foot fence, dug-proof at the base, latched gates. They climb, they dig, they bolt through open doors.</span>
+        </li>
+        <li>
+          <b>They don't come back</b>
+          <span>This is not an off-leash breed. Recall is unreliable no matter how well you train.</span>
+        </li>
+        <li>
+          <b>They shed twice, hugely</b>
+          <span>Coat blows out in clumps spring and fall. Plan on a vacuum you don't love.</span>
+        </li>
+        <li>
+          <b>They need a job</b>
+          <span>A bored husky redecorates. Two solid outlets a day, minimum, for the next 12&ndash;14 years.</span>
+        </li>
       </ul>
     </div>
   </section>
 
   <section>
-    <div class="sec-head">
-      <p class="eyebrow">How reserving works</p>
-      <h2>Four steps, about three weeks start to finish.</h2>
+    <div class="talk">
+      <div class="head">
+        <p class="tag">Health &amp; paperwork</p>
+        <h2>What goes home with them.</h2>
+        <p><strong>PLACEHOLDER LIST</strong> &mdash; swap each line below for your actual vet records,
+           registration type, and guarantee terms before this page goes anywhere.</p>
+      </div>
+      <!-- EDIT: every line here is a placeholder. Replace with your real records. -->
+      <ul class="checks">
+        <li><div><b>Vet exam</b><small>PLACEHOLDER &middot; clinic name + date</small></div></li>
+        <li><div><b>First vaccinations</b><small>PLACEHOLDER &middot; which shots, what date, booster due when</small></div></li>
+        <li><div><b>Deworming</b><small>PLACEHOLDER &middot; product + schedule</small></div></li>
+        <li><div><b>Microchip</b><small>PLACEHOLDER &middot; chipped? transfers at pickup?</small></div></li>
+        <li><div><b>Registration</b><small>PLACEHOLDER &middot; AKC full / limited / none</small></div></li>
+        <li><div><b>Health guarantee</b><small>PLACEHOLDER &middot; length + what it covers</small></div></li>
+        <li><div><b>Go-home kit</b><small>PLACEHOLDER &middot; food, blanket, collar, folder</small></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="tag">How it works</p>
+      <h2>Three steps.</h2>
     </div>
     <ol class="steps">
       <li>
         <div>
-          <h3>Text or email us</h3>
-          <p>Tell us about your house, your yard, your kids, your other animals, and your work hours.
-             We answer every message, usually same day.</p>
+          <h3>Text us</h3>
+          <p>Tell us about your place, your fence, your hours, your other animals. We answer every
+             message. Ask for current photos of whichever pup caught your eye.</p>
         </div>
       </li>
       <li>
         <div>
-          <h3>Video call with the litter</h3>
-          <p>Twenty minutes, live, so you can see them move around and ask everything. We'll tell you
-             honestly which pup we think fits you, even if it isn't the one you picked from the photos.</p>
+          <h3>Come meet them</h3>
+          <p>In person in Glendale, or a video call if you're driving in from out of town.
+             We'll tell you honestly which pup fits you, even if it isn't the one you picked.</p>
         </div>
       </li>
       <li>
         <div>
-          <h3>$500 deposit holds your pup</h3>
-          <p>Applied to the price, refundable up until the go-home date if anything changes on your end.
-             We send a written agreement to sign first.</p>
-        </div>
-      </li>
-      <li>
-        <div>
-          <h3>Pickup day, October 31</h3>
-          <p>Come to the house between 9am and 4pm. Balance due at pickup, cash or Zelle.
-             Plan on an hour &mdash; we go through the folder with you and send you off with food they already eat.</p>
+          <h3>Pickup, September 12</h3>
+          <p>Eight weeks to the day. Plan on an hour &mdash; we go through everything with you and
+             send you home with the food they already eat.
+             <!-- EDIT: deposit terms are a placeholder --> <em>PLACEHOLDER: a $XXX deposit holds
+             your pup until pickup and applies to the price.</em></p>
         </div>
       </li>
     </ol>
@@ -580,32 +597,32 @@
   <section>
     <div class="contact">
       <div>
-        <p class="eyebrow">Get in touch</p>
-        <h2>Ask us anything &mdash; even if you're not ready yet.</h2>
-        <p>We'd rather talk you out of a golden now than take one back in a year.
-           If this litter fills, we'll put you on the list for Willow's next one.</p>
+        <p class="tag">Get in touch</p>
+        <h2>Text is fastest.</h2>
+        <p>Questions welcome even if you're not ready. If this litter fills, we'll tell you
+           straight rather than string you along.</p>
       </div>
       <div class="lines">
-        <!-- EDIT: phone + email -->
-        <a class="line" href="sms:+15555550142">
-          <span>Text (fastest)</span>
-          <strong>(555) 555-0142</strong>
+        <a class="line" href="sms:+16232171039">
+          <span>Call or text</span>
+          <strong>(623) 217-1039</strong>
         </a>
-        <a class="line" href="mailto:hello@willowbend.example?subject=Puppy%20inquiry%20%E2%80%94%20Litter%20W-3">
-          <span>Email</span>
-          <strong>hello@willowbend.example</strong>
+        <!-- EDIT: swap example.com for your real domain once you pick it -->
+        <a class="line" href="mailto:hustlinhuskies@example.com?subject=Husky%20puppy%20inquiry">
+          <span>Email &mdash; PLACEHOLDER domain</span>
+          <strong>hustlinhuskies@example.com</strong>
         </a>
         <div class="line">
-          <span>Pickup location</span>
-          <strong>Prescott, AZ</strong>
+          <span>Pickup</span>
+          <strong>Glendale, AZ</strong>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div>Willow Bend Goldens &middot; Prescott, AZ</div>
-    <div>Litter W-3 &middot; last updated September 6, 2026</div>
+    <div>Hustlin&rsquo; Huskies &middot; Glendale, AZ &middot; 623-217-1039</div>
+    <div>Litter whelped Jul 18, 2026 &middot; draft page, placeholders not yet replaced</div>
   </footer>
 
 </div>
