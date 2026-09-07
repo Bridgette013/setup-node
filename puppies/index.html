@@ -16,11 +16,12 @@
     1. Email domain — currently hustlinhuskies@example.com
     2. Prices — currently "Text for pricing" (no numbers anywhere)
     3. Deposit amount — currently $XXX
-    4. Puppy weights, eye color, markings, temperament notes
+    4. Puppy weights, eye color, markings, temperament notes (stripped from the
+       cards for now — add them back per pup if you get the details)
     5. Vet / shot / deworming / microchip records
     6. Registration type + health guarantee terms
-    7. Photos — Lucy's card is live (img/litter-01.jpg). Chip, Frankie and Eddie still
-       have commented-out <img> lines; drop files in puppies/img/ and uncomment.
+    7. Photos — two in the photo band (litter-01 = Lucy, litter-02 = unidentified boy).
+       Add more as <li> entries in .shots; cards use letter tiles, not photos.
   ==========================================================================
 -->
 
@@ -213,6 +214,31 @@
     text-transform: uppercase;
   }
   .head p { color: var(--ink-soft); max-width: 60ch; margin: 14px 0 0; }
+
+  /* ---- photo band ---- */
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .shots li {
+    border: 1px solid var(--rule);
+    background: var(--paper-2);
+    box-shadow: var(--shadow);
+  }
+  .shots img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+  .shots figcaption {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 10px 12px;
+  }
+  .shots figure { margin: 0; }
 
   /* ---- litter ---- */
   .litter {
@@ -411,33 +437,46 @@
     </dl>
   </div>
 
+  <section>
+    <div class="head">
+      <p class="tag">Photos</p>
+      <h2>The litter.</h2>
+      <p>More on the way &mdash; text for the latest.</p>
+    </div>
+    <!-- EDIT: drop more files in puppies/img/ and add an <li> for each. -->
+    <ul class="shots">
+      <li><figure>
+        <img src="img/litter-01.jpg" width="1400" height="1400" loading="lazy"
+             alt="Lucy, a white and tan Siberian Husky puppy with blue eyes.">
+        <figcaption>Lucy</figcaption>
+      </figure></li>
+      <li><figure>
+        <img src="img/litter-02.jpg" width="1400" height="1400" loading="lazy"
+             alt="A black and white Siberian Husky puppy with a white blaze and blue eyes.">
+        <figcaption>One of the boys</figcaption>
+      </figure></li>
+    </ul>
+  </section>
+
   <section id="litter">
     <div class="head">
       <p class="tag">The litter &nbsp;/&nbsp; 4 available</p>
       <h2>Lucy, Chip, Frankie &amp; Eddie</h2>
-      <p>All four are still available. Text for current photos &mdash; they change fast at this age.</p>
+      <p>All four are still available. Text for photos of a particular pup &mdash; they change fast at this age.</p>
     </div>
 
     <!-- EDIT: notes, weights, eye color and markings below are PLACEHOLDER text. -->
     <ul class="litter">
 
       <li class="pup" style="--c1:#0E7FA8; --c2:#164C63">
-        <div class="pup__photo">
-          <img src="img/litter-01.jpg" width="1400" height="1400" loading="lazy"
-               alt="Lucy, a white and tan Siberian Husky puppy with blue eyes.">
-        </div>
+        <div class="pup__photo">L</div>
         <div class="pup__body">
           <div class="pup__row">
             <div class="pup__name">Lucy</div>
             <span class="pill">Available</span>
           </div>
-          <p class="pup__note">The only girl in the litter. PLACEHOLDER — add a line about her here.</p>
-          <!-- EDIT: eyes and coat read off your photo — correct them if I got it wrong. -->
           <dl class="pup__stats">
             <dt>SEX</dt><dd>Female</dd>
-            <dt>WT</dt><dd>— lb</dd>
-            <dt>EYES</dt><dd>Blue</dd>
-            <dt>COAT</dt><dd>White &amp; tan</dd>
           </dl>
         </div>
       </li>
@@ -452,11 +491,8 @@
             <div class="pup__name">Chip</div>
             <span class="pill">Available</span>
           </div>
-          <p class="pup__note">PLACEHOLDER — add Chip's markings and personality here.</p>
           <dl class="pup__stats">
             <dt>SEX</dt><dd>Male</dd>
-            <dt>WT</dt><dd>— lb</dd>
-            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
@@ -471,11 +507,8 @@
             <div class="pup__name">Frankie</div>
             <span class="pill">Available</span>
           </div>
-          <p class="pup__note">PLACEHOLDER — add Frankie's markings and personality here.</p>
           <dl class="pup__stats">
             <dt>SEX</dt><dd>Male</dd>
-            <dt>WT</dt><dd>— lb</dd>
-            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
@@ -490,11 +523,8 @@
             <div class="pup__name">Eddie</div>
             <span class="pill">Available</span>
           </div>
-          <p class="pup__note">PLACEHOLDER — add Eddie's markings and personality here.</p>
           <dl class="pup__stats">
             <dt>SEX</dt><dd>Male</dd>
-            <dt>WT</dt><dd>— lb</dd>
-            <dt>EYES</dt><dd>—</dd>
           </dl>
         </div>
       </li>
