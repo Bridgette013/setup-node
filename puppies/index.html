@@ -19,8 +19,8 @@
     4. Puppy weights, eye color, markings, temperament notes
     5. Vet / shot / deworming / microchip records
     6. Registration type + health guarantee terms
-    7. Photos — one lead photo is live (img/litter-01.jpg, pup not yet identified).
-       Each card still has a commented-out <img>; drop files in puppies/img/
+    7. Photos — Lucy's card is live (img/litter-01.jpg). Chip, Frankie and Eddie still
+       have commented-out <img> lines; drop files in puppies/img/ and uncomment.
   ==========================================================================
 -->
 
@@ -178,23 +178,6 @@
     :root:not([data-theme="light"]) .btn--ghost { color: var(--ink); }
   }
   .btn:hover { transform: translateY(-2px); }
-
-  .hero__grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
-    gap: clamp(26px, 4.5vw, 56px);
-    align-items: center;
-  }
-  @media (max-width: 820px) {
-    .hero__grid { grid-template-columns: 1fr; }
-  }
-  .hero__shot {
-    margin: 0;
-    border: 1px solid var(--rule);
-    background: var(--paper-2);
-    box-shadow: var(--shadow);
-  }
-  .hero__shot img { display: block; width: 100%; height: auto; }
 
   /* ---- record strip ---- */
   .record {
@@ -407,24 +390,15 @@
   </header>
 
   <div class="hero">
-    <div class="hero__grid">
-      <div>
-        <p class="tag">Litter of four &nbsp;/&nbsp; Whelped July 18, 2026</p>
-        <h1>Arctic dogs, <b>Arizona raised.</b></h1>
-        <p class="lede">
-          Four Siberian Husky puppies &mdash; one girl, three boys &mdash; born and raised in our
-          house in Glendale. They go home at eight weeks, on September 12.
-        </p>
-        <div class="cta-row">
-          <a class="btn" href="sms:+16232171039">Text 623-217-1039</a>
-          <a class="btn btn--ghost" href="#litter">Meet the four</a>
-        </div>
-      </div>
-      <!-- EDIT: once you tell us which pup this is, move it onto that card. -->
-      <figure class="hero__shot">
-        <img src="img/litter-01.jpg" width="1400" height="1400" loading="eager"
-             alt="A Siberian Husky puppy from the litter — white and tan coat, blue eyes.">
-      </figure>
+    <p class="tag">Litter of four &nbsp;/&nbsp; Whelped July 18, 2026</p>
+    <h1>Arctic dogs, <b>Arizona raised.</b></h1>
+    <p class="lede">
+      Four Siberian Husky puppies &mdash; one girl, three boys &mdash; born and raised in our house
+      in Glendale. They go home at eight weeks, on September 12.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href="sms:+16232171039">Text 623-217-1039</a>
+      <a class="btn btn--ghost" href="#litter">Meet the four</a>
     </div>
 
     <dl class="record">
@@ -449,19 +423,21 @@
 
       <li class="pup" style="--c1:#0E7FA8; --c2:#164C63">
         <div class="pup__photo">
-          <!-- <img src="img/lucy.jpg" alt="Lucy, a Siberian Husky puppy"> -->
-          L
+          <img src="img/litter-01.jpg" width="1400" height="1400" loading="lazy"
+               alt="Lucy, a white and tan Siberian Husky puppy with blue eyes.">
         </div>
         <div class="pup__body">
           <div class="pup__row">
             <div class="pup__name">Lucy</div>
             <span class="pill">Available</span>
           </div>
-          <p class="pup__note">PLACEHOLDER — the only girl in the litter. Add a line about her here.</p>
+          <p class="pup__note">The only girl in the litter. PLACEHOLDER — add a line about her here.</p>
+          <!-- EDIT: eyes and coat read off your photo — correct them if I got it wrong. -->
           <dl class="pup__stats">
             <dt>SEX</dt><dd>Female</dd>
             <dt>WT</dt><dd>— lb</dd>
-            <dt>EYES</dt><dd>—</dd>
+            <dt>EYES</dt><dd>Blue</dd>
+            <dt>COAT</dt><dd>White &amp; tan</dd>
           </dl>
         </div>
       </li>
