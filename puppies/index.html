@@ -11,16 +11,21 @@
     Location ....... Glendale, AZ
     Whelped ........ July 18, 2026
     Pups ........... Lucy (F), Chip (M), Frankie (M), Eddie (M)
+    Price .......... $800
+    Deposit ........ $300, applies to the price
+    Foster pups .... shots and deworming given in-home by the foster, not a clinic
 
   STILL PLACEHOLDER — search "EDIT:" to find each one:
     1. Email domain — currently hustlinhuskies@example.com
-    2. Prices — currently "Text for pricing" (no numbers anywhere)
-    3. Deposit amount — currently $XXX
-    4. Puppy weights, eye color, markings, temperament notes (stripped from the
+    2. Shot + deworming specifics — which vaccines, dates given, next booster
+       due, dewormer product and dates
+    3. Vet exam — has a vet seen them at all? clinic + date, or say none yet
+    4. Microchip — chipped or not, and does it transfer at pickup
+    5. Papers — registration type, or state plainly that there are none
+    6. Go-home kit contents
+    7. Puppy weights, eye color, markings, temperament notes (stripped from the
        cards for now — add them back per pup if you get the details)
-    5. Vet / shot / deworming / microchip records
-    6. Registration type + health guarantee terms
-    7. Photos — each pup card carries its own photo, embedded as a base64 data URI
+    8. Photos — each pup card carries its own photo, embedded as a base64 data URI
        so this file works standalone with no img/ folder next to it. Full-size
        originals are in puppies/img/ if you'd rather serve real files instead
        (swap the data URI back to src="img/litter-0X.jpg").
@@ -409,8 +414,7 @@
       <div><dt>Ready to go</dt><dd>Sep 12, 2026</dd></div>
       <div><dt>Litter</dt><dd>1 girl, 3 boys</dd></div>
       <div><dt>Pickup</dt><dd>Glendale, AZ</dd></div>
-      <!-- EDIT: replace with your price once you set it -->
-      <div><dt>Pricing</dt><dd>Text to ask</dd></div>
+      <div><dt>Price</dt><dd>$800</dd></div>
     </dl>
   </div>
 
@@ -534,18 +538,24 @@
       <div class="head">
         <p class="tag">Health &amp; paperwork</p>
         <h2>What goes home with them.</h2>
-        <p><strong>PLACEHOLDER LIST</strong> &mdash; swap each line below for your actual vet records,
-           registration type, and guarantee terms before this page goes anywhere.</p>
+        <p>These are foster pups. Their shots and deworming were done in-home,
+           by hand, on schedule &mdash; not at a clinic. Everything below says plainly
+           who did what, so nobody drives home thinking they have a vet folder they
+           don't have.</p>
       </div>
-      <!-- EDIT: every line here is a placeholder. Replace with your real records. -->
+      <!-- EDIT: vaccinations + deworming are CONFIRMED (given in-home by the foster).
+           The dates, product names, and the last four lines are still placeholder. -->
       <ul class="checks">
-        <li><div><b>Vet exam</b><small>PLACEHOLDER &middot; clinic name + date</small></div></li>
-        <li><div><b>First vaccinations</b><small>PLACEHOLDER &middot; which shots, what date, booster due when</small></div></li>
-        <li><div><b>Deworming</b><small>PLACEHOLDER &middot; product + schedule</small></div></li>
+        <li><div><b>Vaccinations &mdash; given</b><small>Administered in-home by the foster, not a clinic.
+            PLACEHOLDER &middot; which shots, dates given, next booster due</small></div></li>
+        <li><div><b>Deworming &mdash; given</b><small>Administered in-home by the foster.
+            PLACEHOLDER &middot; product used + dates</small></div></li>
+        <li><div><b>Rabies</b><small>Not given. Pups are too young &mdash; rabies goes at 12&ndash;16 weeks,
+            and in Arizona it has to come from a licensed vet. That first vet visit is on the new owner.</small></div></li>
+        <li><div><b>Vet exam</b><small>PLACEHOLDER &middot; has a vet seen them? clinic + date, or say none yet</small></div></li>
         <li><div><b>Microchip</b><small>PLACEHOLDER &middot; chipped? transfers at pickup?</small></div></li>
-        <li><div><b>Registration</b><small>PLACEHOLDER &middot; AKC full / limited / none</small></div></li>
-        <li><div><b>Health guarantee</b><small>PLACEHOLDER &middot; length + what it covers</small></div></li>
-        <li><div><b>Go-home kit</b><small>PLACEHOLDER &middot; food, blanket, collar, folder</small></div></li>
+        <li><div><b>Papers</b><small>PLACEHOLDER &middot; registration type, or state plainly that there are none</small></div></li>
+        <li><div><b>Go-home kit</b><small>PLACEHOLDER &middot; food, blanket, collar, records sheet</small></div></li>
       </ul>
     </div>
   </section>
@@ -567,16 +577,15 @@
         <div>
           <h3>Come meet them</h3>
           <p>In person in Glendale, or a video call if you're driving in from out of town.
-             We'll tell you honestly which pup fits you, even if it isn't the one you picked.</p>
+             We'll tell you honestly which pup fits you, even if it isn't the one you picked.
+             A <b>$300 deposit</b> holds your pick until pickup day and comes off the $800.</p>
         </div>
       </li>
       <li>
         <div>
           <h3>Pickup, September 12</h3>
           <p>Eight weeks to the day. Plan on an hour &mdash; we go through everything with you and
-             send you home with the food they already eat.
-             <!-- EDIT: deposit terms are a placeholder --> <em>PLACEHOLDER: a $XXX deposit holds
-             your pup until pickup and applies to the price.</em></p>
+             send you home with the food they already eat. The remaining $500 is due that day.</p>
         </div>
       </li>
     </ol>
